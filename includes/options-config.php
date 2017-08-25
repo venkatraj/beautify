@@ -660,7 +660,7 @@ function beautify_display_upgrade() {
 							),
 							'recent_posts_count' => array(
 								'type' => 'text',
-								'label' => __('No. of Recent Posts', 'remedial'),
+								'label' => __('No. of Recent Posts', 'beautify'),
 								'sanitize_callback' => 'absint',
 								'default' => 2,  
 							),

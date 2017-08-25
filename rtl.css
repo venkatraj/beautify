@@ -40,7 +40,8 @@ html {
 body {
   background: #fff;
   
-  overflow: hidden; }
+  overflow: hidden;
+  direction: rtl; }
 
 article,
 aside,

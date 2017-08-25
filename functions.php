@@ -164,7 +164,7 @@ function beautify_setup() {
 			),
 			'service-section-title' => array(  
 				'post_type' => 'page',
-				'post_title' => __( 'Who We Are', 'remedial'),
+				'post_title' => __( 'Who We Are', 'beautify'),
 	        ),
 			'slider-one' => array( 
 	            'post_type' => 'post',
@@ -198,7 +198,7 @@ function beautify_setup() {
 			),
 			'recent-post-section-title' => array(  
 				'post_type' => 'page',
-				'post_title' => __( 'Our Blog', 'remedial'),
+				'post_title' => __( 'Our Blog', 'beautify'),
 	        ),
 			
 		),

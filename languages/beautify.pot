@@ -96,6 +96,10 @@ msgstr ""
 msgid "<h4 class=\"widget-title\">Contact Details</h4><ul><li><i class=\"fa fa-map-marker\"></i>14 Tottenham Court Road, London, English</li><li><i class=\"fa fa-phone\"></i>(102) 6666 8888</li><li><i class=\"fa fa-envelope\"></i>info@mail.com</li><li><i class=\"fa fa-fax\"></i>(102) 8888 9999</li><li><i class=\"fa fa-clock-o\"></i>Mon - Sat: 9:00 - 18:00</li></ul>"
 msgstr ""
 
+#: functions.php:167
+msgid "Who We Are"
+msgstr ""
+
 #: functions.php:171
 msgid "Post One"
 msgstr ""
@@ -122,6 +126,10 @@ msgstr ""
 
 #: functions.php:195
 msgid "Residential Design"
+msgstr ""
+
+#: functions.php:201
+msgid "Our Blog"
 msgstr ""
 
 #: functions.php:209
@@ -669,6 +677,10 @@ msgstr ""
 msgid "Enable recent post section in home page"
 msgstr ""
 
+#: includes/options-config.php:663
+msgid "No. of Recent Posts"
+msgstr ""
+
 #: includes/options-config.php:670
 msgid "Flex Carousel"
 msgstr ""
@@ -714,6 +726,10 @@ msgstr ""
 #. translators: used between list items, there is a space after the comma
 #: includes/template-tags.php:47, includes/template-tags.php:484
 msgid ", "
+msgstr ""
+
+#: includes/template-tags.php:49, includes/template-tags.php:486
+msgid "%1$s "
 msgstr ""
 
 #: includes/template-tags.php:183
@@ -787,10 +803,6 @@ msgstr ""
 
 #: includes/template-tags.php:423, includes/template-tags.php:426
 msgid "No Related Posts Yet!"
-msgstr ""
-
-#: includes/template-tags.php:486
-msgid "%1$s "
 msgstr ""
 
 #: includes/template-tags.php:502

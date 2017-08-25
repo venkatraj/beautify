@@ -46,7 +46,7 @@ function beautify_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', __( ', ', 'beautify' ) );
 		if ( $tags_list ) {
-			printf( '<div class="tag-footer"><span class="tags-links"><span class="tag-title">Tags</span> : ' . __( '%1$s ', 'remedial' ) . '</span></div>', $tags_list );
+			printf( '<div class="tag-footer"><span class="tags-links"><span class="tag-title">Tags</span> : ' . __( '%1$s ', 'beautify' ) . '</span></div>', $tags_list );
 		}
 	}
 } 
