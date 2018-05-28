@@ -34,14 +34,16 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 								    	<div class="flex-image">
 								    		<?php the_post_thumbnail('full'); ?>
 								    	</div>
-								    	<div class="flex-caption">
-								    		<?php the_content( __('Read More','beautify') ); 
-											wp_link_pages( array(
-												'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'beautify' ),
-												'after'  => '</div>',
-											) );
-										?>
-								    	</div>
+								    	<?php $content = get_the_content();
+								    	if( !empty( $content ) ) { ?>
+								    		<div class="flex-caption">
+									    		<?php the_content( __('Read More','beautify') ); 
+										    	wp_link_pages( array(
+													'before' => '<div class="page-links">' . esc_html__( 'Pages: ', 'beautify' ),
+													'after'  => '</div>',
+												) ); ?>
+								    		</div>
+								    	<?php } ?>
 								    </li>
 							    <?php endif;?>			   
 						<?php endwhile; ?>
@@ -70,7 +72,7 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 					echo '<div class="section-head">';
 					echo '<h2 class="title-divider"><span>' . get_the_title(absint($service_section_title)) . '</span></h2>';
 					$description = get_post_field('post_content',absint($service_section_title));
-					echo '<p class="sub-description">' . $description . '</p>';
+					echo '<p class="sub-description">' . esc_html($description) . '</p>';
 				    echo '</div>';
 				}
 				$service_pages = array($service_page1,$service_page2,$service_page3);
@@ -134,7 +136,6 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 		'cat' => absint($client_cat),
 		//'posts_per_page' => intval($client_count)              
 	);?>
-
 		<?php $home_client = get_theme_mod('client_field',true); 
 			if( $home_client ):?>
 				<div class="client-carousel">

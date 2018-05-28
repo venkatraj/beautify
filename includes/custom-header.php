@@ -1,16 +1,5 @@
 <?php
 /**
- * Sample implementation of the Custom Header feature
- * http://codex.wordpress.org/Custom_Headers
- *
- * You can add an optional custom header image to header.php like so ...
-
-	<?php if ( get_header_image() ) : ?>
-	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-		<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
-	</a>
-	<?php endif; // End header image check. ?>
-
  *
  * @package Beautify
  */
@@ -52,16 +41,10 @@ function beautify_header_style() {
 	if ( get_header_image() ) {
 	?>
 	<style type="text/css">    
-		.header-image {
-			background-image: url(<?php echo esc_url(get_header_image()); ?>);
-			display: block;
-		}
-        .header-inner {
-        	
-        }
-      	.custom-header-media img {
-		    display: none;
-		}   
+        .custom-header-media img {
+		    display: block;
+		}  
+      
 	</style>
 	<?php
 	}
@@ -85,6 +68,7 @@ function beautify_header_style() {
 				      height: 100vh;
 				      width: 100vw;
 				      overflow: hidden;
+				      object-fit: cover;
 				}
 
 		    </style><?php

@@ -105,7 +105,8 @@ add_action( 'save_post',     'beautify_category_transient_flusher' );
 if( ! function_exists('beautify_recent_posts') ) {  
 	function beautify_recent_posts() {      
 		$output = '';
-		$posts_per_page  = get_theme_mod('recent_posts_count', 2 );
+		$posts_per_page  = get_theme_mod('recent_posts_count', 2 ); 
+		$post_ID  = explode (',',get_theme_mod('recent_posts_exclude'));
 		// WP_Query arguments
 		$args = array (
 			'post_type'              => 'post',
@@ -113,6 +114,7 @@ if( ! function_exists('beautify_recent_posts') ) {
 			'posts_per_page'         => intval($posts_per_page),
 			'ignore_sticky_posts'    => true,
 			'order'                  => 'DESC',
+			'post__not_in'           => $post_ID,
 		);
 
 		// The Query
@@ -126,7 +128,7 @@ if( ! function_exists('beautify_recent_posts') ) {
 				$output.= '<div class="section-head">';
 				$output.= '<h2 class="title-divider"><span>' . get_the_title(absint($recent_post_section_title)) . '</span></h2>';
 				$description = get_post_field('post_content',absint($recent_post_section_title));
-				$output.= '<p class="sub-description">' . $description . '</p>';
+				$output.= '<p class="sub-description">' . esc_html($description) . '</p>';
 			    $output.= '</div>';
 			}
 			$output .=  '<div class="container"><main id="main" class="site-main" role="main">'; 
@@ -144,7 +146,7 @@ if( ! function_exists('beautify_recent_posts') ) {
 										}
 								$output .= '</div><!-- .latest-post-thumb -->';
 								$output .='<div class="entry-meta">';  
-									$output .='<span class="data-structure"><a class="url fn n" href="'. get_day_link( get_the_time('Y'), get_the_time('m'),get_the_time('d')). '"><span class="dd"><span class="date">'.get_the_time('j').'</span><span class="month">'. get_the_time('M').'</span></span></a></span>';
+									$output .='<span class="data-structure"><a class="url fn n" href="'. esc_url( get_day_link( get_the_time('Y'), get_the_time('m'),get_the_time('d')) ) . '"><span class="dd"><span class="date">'.get_the_time('j').'</span><span class="month">'. get_the_time('M').'</span></span></a></span>';
 								$output .='</div><!-- entry-meta -->';		
 								$output .= '<div class=latest-post-details>';
 								    $output .= '<h4><a href="'. esc_url(get_permalink()) . '">' . get_the_title() . '</a></h4>';
@@ -268,16 +270,6 @@ if( ! function_exists('beautify_recent_posts') ) {
 				$post_type = get_post_type_object(get_post_type());
 				echo $before . $post_type->labels->singular_name . $after;
 
-			} elseif ( is_attachment() ) {
-				$parent = get_post($post->post_parent);
-				$cat = get_the_category($parent->ID); $cat = $cat[0];
-				$cats = get_category_parents($cat, TRUE, $delimiter);
-				$cats = str_replace('<a', $linkBefore . '<a' . $linkAttr, $cats);
-				$cats = str_replace('</a>', '</a>' . $linkAfter, $cats);
-				echo $cats;
-				printf($link, get_permalink($parent), $parent->post_title);
-				if ($showCurrent == 1) echo $delimiter . $before . get_the_title() . $after;
-
 			} elseif ( is_page() && !$post->post_parent ) {
 				if ($showCurrent == 1) echo $before . get_the_title() . $after;
 
@@ -285,7 +277,7 @@ if( ! function_exists('beautify_recent_posts') ) {
 				$parent_id  = $post->post_parent;
 				$breadcrumbs = array();
 				while ($parent_id) {
-					$page = get_page($parent_id);
+					$page = get_page($parent_id); 
 					$breadcrumbs[] = sprintf($link, get_permalink($page->ID), get_the_title($page->ID));
 					$parent_id  = $page->post_parent;
 				}
@@ -476,7 +468,8 @@ if( ! function_exists('beautify_top_meta') ) {
 		if ( 'post' == get_post_type() ) {  ?>
 			<div class="entry-meta">
 				<span class="date-structure">				
-					<span class="dd"><a class="url fn n" href="<?php echo get_day_link(get_the_time('Y'), get_the_time('m'),get_the_time('d')); ?>"><?php the_time(get_option('date_format')); ?></a></span>			
+					<span class="dd"><a class="url fn n" href="<?php echo esc_url(get_day_link
+					(get_the_time('Y'), get_the_time('m'),get_the_time('d')) ); ?>"><?php the_time(get_option('date_format')); ?></a></span>			
 				</span> 
 				<?php beautify_author(); ?>
 				<?php 

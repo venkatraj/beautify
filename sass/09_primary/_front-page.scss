@@ -59,8 +59,11 @@
   }
 }
 .service-wrapper{
-  padding:100px 0px 0px;
+  padding:80px 0px 0px;
   position:relative;
+  .sub-description {
+    margin-top:20px;
+  }
   .service-section {
     margin-bottom:70px;
     .service-content {
@@ -138,9 +141,15 @@
 /* Flex Recent Post */
 
 .post-wrapper {
-  padding: 100px 0px 0px;
+  padding: 80px 0px 30px;
   background:$secondary;
   position: relative; 
+  .sub-description {
+    margin-top:20px;
+    color:white;
+    width: 80%;
+    margin: 20px auto;
+  }
   .latest-post-thumb {
     a { 
       img {
@@ -188,6 +197,11 @@
     }
     .latest-post-content {
       font-size:14px;
+      color:$white;
+      h1,h2,h3,h4,h5,h6 {
+        color:white;
+        line-height:normal;
+      }
       p {
         margin-bottom:1em;
       }
@@ -281,10 +295,9 @@ text-align: center;
     }
     input[type="submit"] {
         float: left;
-        width: 20%;
         position: relative;
         right: -4px;
-        top: -5px;
+        top: -2px;
     }
 }
 

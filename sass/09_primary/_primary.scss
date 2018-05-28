@@ -17,6 +17,11 @@
 	} 
 }
 
+.blog {
+	.site-content {
+		border-top:1px solid $c5;
+	}
+}
 @import "asides";
 
 @import "social";

@@ -44,7 +44,7 @@ if ( is_singular() && pings_open() ) { ?>
 			<div class="branding header-image">
 			<div class="nav-wrap">
 				<div class="container">
-					<div class="four columns">
+					<div class="five columns">
 						<div class="site-branding">
 							<?php 
 								$logo_title = get_theme_mod( 'logo_title' );   
@@ -61,7 +61,7 @@ if ( is_singular() && pings_open() ) { ?>
 					</div>
 					
 			
-					<div class="twelve columns">
+					<div class="eleven columns">
 						<nav id="site-navigation" class="main-navigation clearfix" role="navigation">
 							<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><i class="fa fa-align-justify fa-2x" aria-hidden="true"></i></button>
 							<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>

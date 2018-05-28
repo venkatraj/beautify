@@ -123,11 +123,6 @@
 		position: relative;
 		font-weight: 700;
 		font-size:16px;
-		&:hover {
-			&:after {
-				
-			}
-		}
 	}
 
 	.children {
@@ -209,7 +204,7 @@
 
 .comment-navigation .nav-previous,
 .paging-navigation .nav-previous,
-.post-navigation .nav-previous {
+.posts-navigation .nav-previous,.post-navigation .nav-previous {
 	float: left;
 	width: 48%;
 }
@@ -218,7 +213,7 @@
 
 .comment-navigation .nav-next,
 .paging-navigation .nav-next,
-.post-navigation .nav-next {
+.posts-navigation .nav-next,.post-navigation .nav-next {
 	float: right;
 	text-align: right;
 	width: 47%;
@@ -363,10 +358,7 @@
 		top: 30%;
 		font-weight: 700;
 	}
-	.nav-previous:active,.nav-next:active {
-		
-	}
-
+	
 	.nav-previous {
 		a {
 			padding-left:15px;

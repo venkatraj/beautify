@@ -101,7 +101,7 @@ gulp.task('default',['clean'] , function() {
 gulp.task('watch',function(){  
   browserSync.init({  
     files: ['./**/*.php'],    
-    proxy: 'http://localhost/new/beautify',
+    proxy: 'http://localhost/free/beautify',
   }); 
   // gulp.watch('dist/js/*.js',['scripts']);
    gulp.watch('sass/**/*.scss',['styles']);    

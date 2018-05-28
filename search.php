@@ -13,7 +13,7 @@ get_template_part( 'template-parts/breadcrumb' ); ?>
 
         <?php $sidebar_position = get_theme_mod( 'sidebar_position', 'right' ); ?>
 		<?php if( 'left' == $sidebar_position ) :?>
-			<?php get_sidebar('left'); ?>
+			<?php get_sidebar(); ?>
 		<?php endif; ?>  
 		
 	<section id="primary" class="content-area <?php beautify_layout_class(); ?>  columns">
@@ -44,7 +44,10 @@ get_template_part( 'template-parts/breadcrumb' ); ?>
 					if(  get_theme_mod ('numeric_pagination',true) ) : 
 							the_posts_pagination();
 						else :
-							beautify_post_nav();     
+							the_posts_navigation( array(
+							    'prev_text' => __(' &larr; Previous Post','beautify'),
+							    'next_text' => __('Next Post &rarr;','beautify'),
+							 ) );      
 						endif; 
 				?>
 

@@ -1,10 +1,10 @@
 /*
 Theme Name: Beautify
-Theme URI: http://www.webulousthemes.com/beautify/
+Theme URI: https://www.webulousthemes.com/beautify/
 Author: N. Venkat Raj
-Author URI: http://www.webulousthemes.com/
+Author URI: https://www.webulousthemes.com/
 Description: Beautify is a beautiful and Flexible WordPress Free theme. Can be used for Interior,Photography,corporate business, Cafe and Restarutant.There is no theme options panel, instead uses Customizer, core feature of WordPress and comes with lots of options to customize. Has 3 Footer Widget Areas.
-Version: 1.0.0
+Version: 1.0.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: beautify
@@ -921,13 +921,13 @@ a {
 
 .comment-navigation .nav-previous,
 .paging-navigation .nav-previous,
-.post-navigation .nav-previous {
+.posts-navigation .nav-previous, .post-navigation .nav-previous {
   float: left;
   width: 48%; }
 
 .comment-navigation .nav-next,
 .paging-navigation .nav-next,
-.post-navigation .nav-next {
+.posts-navigation .nav-next, .post-navigation .nav-next {
   float: right;
   text-align: right;
   width: 47%; }
@@ -1343,9 +1343,6 @@ object {
     .breadcrumb .breadcrumb-right #crumbs span {
       padding: 0px 5px; }
 
-.blog .site-header {
-  border-bottom: 2px solid #f5f5f5; }
-
 .top-nav {
   background: #18191b;
   margin-bottom: 0px;
@@ -1411,6 +1408,9 @@ object {
 .single .site-main article.post {
   padding-top: 0; }
 
+.blog .site-content {
+  border-top: 1px solid #dfdfdf; }
+
 .share-box .widget-title {
   margin-bottom: 50px;
   color: #18191b; }
@@ -1420,16 +1420,16 @@ object {
   .share-box ul li {
     border: 0;
     padding: 0;
-    margin: 0 8px 0px 0px;
+    margin: 0 10px 0px 0px;
     display: inline-block; }
     .share-box ul li a {
-      width: 30px;
-      height: 30px;
+      width: 35px;
+      height: 35px;
       color: #18191b;
       display: inline-block;
       background-color: #18191b;
       text-align: center;
-      line-height: 30px;
+      line-height: 35px;
       -webkit-transform: rotate(45deg);
               transform: rotate(45deg);
       color: #fff; }
@@ -1440,8 +1440,7 @@ object {
         -webkit-transform: rotate(-45deg);
                 transform: rotate(-45deg);
         font-size: 14px;
-        font-size: 1.4rem;
-        line-height: 2; }
+        font-size: 1.4rem; }
 
 .share-box {
   margin-bottom: 50px; }
@@ -1818,47 +1817,6 @@ blockquote, q {
   .single-post #primary .tag-footer .tag-title {
     color: #fab702; }
 
-/* Search Page */
-.search article .entry-meta {
-  text-transform: uppercase; }
-  .search article .entry-meta span {
-    position: relative; }
-    .search article .entry-meta span:after {
-      position: absolute;
-      content: "-";
-      font-size: 17px;
-      top: auto;
-      left: auto; }
-    .search article .entry-meta span a {
-      color: #18191b;
-      font-size: 14px;
-      padding: 0px 10px 0px 20px; }
-      .search article .entry-meta span a:hover {
-        color: #fab702; }
-    .search article .entry-meta span:last-child:after {
-      display: none; }
-  .search article .entry-meta .author a {
-    padding-left: 0px; }
-
-.search article .entry-date {
-  border: 2px solid #fab702;
-  float: left;
-  text-align: center;
-  width: 15%; }
-  .search article .entry-date .date-structure {
-    display: inline-block;
-    padding: 5px 0px;
-    color: #fab702;
-    line-height: 1; }
-    .search article .entry-date .date-structure h2 {
-      font-size: 54px;
-      color: #fab702;
-      margin-bottom: 0px; }
-    .search article .entry-date .date-structure span {
-      display: block;
-      font-size: 16px;
-      font-weight: bold; }
-
 .home .site-content {
   padding-top: 0; }
 
@@ -1909,8 +1867,10 @@ blockquote, q {
       color: #fab702; }
 
 .service-wrapper {
-  padding: 100px 0px 0px;
+  padding: 80px 0px 0px;
   position: relative; }
+  .service-wrapper .sub-description {
+    margin-top: 20px; }
   .service-wrapper .service-section {
     margin-bottom: 70px; }
     .service-wrapper .service-section .service-content {
@@ -1963,9 +1923,14 @@ blockquote, q {
 
 /* Flex Recent Post */
 .post-wrapper {
-  padding: 100px 0px 0px;
+  padding: 80px 0px 30px;
   background: #18191b;
   position: relative; }
+  .post-wrapper .sub-description {
+    margin-top: 20px;
+    color: white;
+    width: 80%;
+    margin: 20px auto; }
   .post-wrapper .latest-post-thumb a img {
     display: block;
     border-bottom: 5px solid #fab702; }
@@ -1999,7 +1964,11 @@ blockquote, q {
       .post-wrapper .latest-post-details h4 a:hover {
         color: #fab702; }
     .post-wrapper .latest-post-details .latest-post-content {
-      font-size: 14px; }
+      font-size: 14px;
+      color: #fff; }
+      .post-wrapper .latest-post-details .latest-post-content h1, .post-wrapper .latest-post-details .latest-post-content h2, .post-wrapper .latest-post-details .latest-post-content h3, .post-wrapper .latest-post-details .latest-post-content h4, .post-wrapper .latest-post-details .latest-post-content h5, .post-wrapper .latest-post-details .latest-post-content h6 {
+        color: white;
+        line-height: normal; }
       .post-wrapper .latest-post-details .latest-post-content p {
         margin-bottom: 1em; }
     .post-wrapper .latest-post-details .more-link {
@@ -2067,10 +2036,9 @@ blockquote, q {
 
 .no-results input[type="submit"], .not-found input[type="submit"] {
   float: left;
-  width: 20%;
   position: relative;
   right: -4px;
-  top: -5px; }
+  top: -2px; }
 
 .flexslider {
   border: 0 !important;
@@ -2111,6 +2079,8 @@ blockquote, q {
         border: 1px solid #fff !important;
         border-radius: 25px;
         background-color: transparent; }
+  .flexslider .flex-direction-nav li {
+    padding: 0px; }
   .flexslider .flex-direction-nav a {
     margin: 0;
     opacity: 1;
@@ -3058,10 +3028,7 @@ blockquote, q {
     .site-footer .footer-widgets .widget_nav_menu ul {
       clear: both; }
     .site-footer .footer-widgets .widget_nav_menu li {
-      border-bottom: none;
-      float: left;
-      width: 50%;
-      font-weight: bold; }
+      border-bottom: none; }
       .site-footer .footer-widgets .widget_nav_menu li ul.sub-menu {
         border-top: none;
         margin-left: 12px; }
@@ -3080,7 +3047,7 @@ blockquote, q {
     text-align: center; }
     .site-info .copyright p {
       margin-bottom: 0px; }
-      .site-info .copyright p a:hover {
+      .site-info .copyright p a:hover, .site-info .copyright p a:active, .site-info .copyright p a:focus {
         color: #fff; }
 
 /*--------------------------------------------------------------
